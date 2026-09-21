@@ -1,0 +1,3 @@
+FROM shopify-erpnext-demo:15
+COPY --chown=frappe:frappe scripts/patch_callback.py /tmp/patch_callback.py
+RUN /home/frappe/frappe-bench/env/bin/python /tmp/patch_callback.py && rm /tmp/patch_callback.py
